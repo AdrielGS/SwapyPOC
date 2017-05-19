@@ -42,13 +42,25 @@ window.App = {
 			creditCompany = accounts[1];  //Static accounts
 
 		});
+
+		FundraisingOffer.deployed.then(function(instance){
+
+			return instance.start(1, 25000, 10, 6); // Adding static example to the application
+
+		});.then(function(result) {
+
+	    }).catch(function(err) {
+
+	    });
+
+
 	},	
 
 	invest: function(){
 
-		var contractID = ;
-		var investmentValue = ;
-		var installmentsNumber = ;
+		var contractID = ; // It would come from the frontend application
+		var investmentValue = ; // It would come from the frontend application
+		var installmentsNumber = ; // It would come from the frontend application
 
 
 		FundraisingOffer.deployed.then(function(instance){

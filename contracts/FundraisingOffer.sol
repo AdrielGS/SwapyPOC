@@ -18,11 +18,21 @@ contract FundraisingOffer {
 		uint monthlyPayment; // value the investor will receive from the credit company
 	}
 
-	CompanyContract[] companyContracts; // Put struct in another contract and make this variable available here
+	CompanyContract[] companyContracts;
 
 	uint dealID;
 
 	mapping(uint => Deal) dealsConfirmed;
+
+	function start(uint contractID, uint investmentValue, uint ROI, uint paybackTime) {
+		companyContracts.push(CompanyContract(
+				contractID,
+				investmentValue,
+				ROI,
+				paybackTime
+			)
+		);
+	}
 
 	function invest(uint contractID, address companyAddress, uint totalValue, uint installmentsNumber) returns(uint){ //Args comes from the frontend application
 
